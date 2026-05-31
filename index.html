@@ -1,146 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Iniciante | Transformo Ideias em Código</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #0f172a;
-            color: #f1f5f9;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 16px;
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .subtitle {
-            font-size: 1.25rem;
-            color: #94a3b8;
-            margin-bottom: 40px;
-        }
-        .card {
-            background: #1e293b;
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid #334155;
-            margin-bottom: 40px;
-        }
-        #contador {
-            font-size: 5rem;
-            font-weight: bold;
-            color: #38bdf8;
-            margin: 20px 0;
-        }
-        button {
-            background: #38bdf8;
-            color: #0f172a;
-            border: none;
-            padding: 16px 32px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        button:hover { background: #0ea5e9; transform: translateY(-2px); }
-        button:disabled { background: #475569; cursor: not-allowed; transform: none; }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-            text-align: left;
-        }
-        .feature {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-        }
-        .feature h3 { color: #38bdf8; margin-bottom: 8px; }
-        .cta { margin-top: 40px; }
-        .cta a { color: #38bdf8; text-decoration: none; font-weight: 600; }
-        footer { margin-top: 60px; color: #64748b; font-size: 0.9rem; }
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            #contador { font-size: 3.5rem; }
-        }
-    </style>
+    <title>Matheus - Dev Frontend</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Olá, sou Dev Iniciante</h1>
-        <p class="subtitle">Transformo lógica em cliques. Este é meu primeiro projeto com Git + Deploy.</p>
+        <header>
+            <h1>Matheus Viana</h1>
+            <p>Desenvolvedor Frontend Iniciante</p>
+        </header>
 
-        <div class="card">
-            <p>Teste de estresse do botão:</p>
-            <div id="contador">0</div>
-            <button onclick="incrementar()" id="btnClick">Clique em mim!</button>
-            <p id="mensagem" style="margin-top: 20px; color: #94a3b8;"></p>
-        </div>
+        <main>
+            <section class="sobre">
+                <h2>Sobre mim</h2>
+                <p>Transformo lógica em cliques. Estudando HTML, CSS, JS e Git.</p>
+                <p>Primeiro deploy feito com GitHub Pages 🚀</p>
+            </section>
 
-        <div class="features">
-            <div class="feature">
-                <h3>HTML5 + CSS3</h3>
-                <p>Estrutura semântica e design responsivo mobile-first.</p>
-            </div>
-            <div class="feature">
-                <h3>JavaScript</h3>
-                <p>Manipulação de DOM e lógica de estado puro.</p>
-            </div>
-            <div class="feature">
-                <h3>Git + GitHub Pages</h3>
-                <p>Versionamento e deploy automático. Código aberto.</p>
-            </div>
-        </div>
+            <section class="projetos">
+                <h2>Projetos</h2>
+                <div class="card">
+                    <h3>Landing Page Interativa</h3>
+                    <p>HTML, CSS, JavaScript + GitHub Pages</p>
+                    <button id="btn-contador">Cliques: <span id="contador">0</span></button>
+                </div>
+            </section>
 
-        <div class="cta">
-            <p>Gostou? Este projeto está no meu GitHub 👇</p>
-            <a href="https://github.com/SEU-USUARIO" target="_blank">github.com/SEU-USUARIO</a>
-        </div>
+            <section class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Git & GitHub</li>
+                </ul>
+            </section>
+        </main>
 
         <footer>
-            <p>Feito com VS Code, café e muita persistência. 2026</p>
+            <a href="https://github.com/xaulinmatadordporco06" target="_blank">GitHub</a>
         </footer>
     </div>
 
-    <script>
-        let cliques = 0;
-        const contadorEl = document.getElementById('contador');
-        const btn = document.getElementById('btnClick');
-        const msg = document.getElementById('mensagem');
-
-        function incrementar() {
-            cliques++;
-            contadorEl.innerText = cliques;
-            
-            if (cliques === 1) msg.innerText = 'Funcionou! Git guardou esse clique.';
-            if (cliques === 5) {
-                msg.innerText = 'Modo turbo ativado 🔥';
-                document.body.style.background = '#1e1b4b';
-            }
-            if (cliques === 10) {
-                msg.innerText = 'VOCÊ QUEBROU O BOTÃO 🏆 Contrata eu';
-                btn.disabled = true;
-                btn.innerText = 'Limite atingido';
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
